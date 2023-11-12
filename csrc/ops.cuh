@@ -17,6 +17,7 @@
 // check rocminfo | grep "Wavefront Size". Should be supported on all new GPU's
 // dirty hack to force wavefront_size 32 so this compiles
 // RDNA 2 defaults to 64 which conflicts with kQuantizeBlockwise
+#undef __AMDGCN_WAVEFRONT_SIZE
 #define __AMDGCN_WAVEFRONT_SIZE 32 
 
 #include <hip/hip_runtime_api.h>
